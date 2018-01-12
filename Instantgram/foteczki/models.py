@@ -6,3 +6,6 @@ class Photo(models.Model):
     creation_date = models.DateTimeField(auto_now=True)
     description = models.TextField()
     op = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name

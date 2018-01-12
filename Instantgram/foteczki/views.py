@@ -1,6 +1,7 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import View
+from .models import Photo
 from django.db.models import Avg
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
@@ -14,4 +15,6 @@ import hashlib
 
 class HubView(View):
     def get(self, request):
-        return render(request, "hub.html")
+        ctx = {"posts": Photo.objects.all().order_by("-creation_date")}
+        return render(request, "hub.html", ctx)
+
