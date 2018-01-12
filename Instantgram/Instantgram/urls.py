@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from foteczki.views import (HubView)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', HubView.as_view(), name="hub"),
 ]
