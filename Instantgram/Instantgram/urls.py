@@ -15,9 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from foteczki.views import (HubView)
+from foteczki.views import (HubView, LoginView)
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', HubView.as_view(), name="hub"),
+    path('hub/', HubView.as_view(), name="hub"),
+    path('', LoginView.as_view(), name="login"),
 ]
+
+
+
+# urlpatterns += staticfiles_urlpatterns()
+# urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

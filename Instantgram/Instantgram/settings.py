@@ -124,5 +124,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = 'static/images'
-MEDIA_URL = ''
+MEDIA_ROOT = '/home/konrad/Pulpit/Instantgram/Instantgram/foteczki/images'
+
+MEDIA_URL = '/media/'
