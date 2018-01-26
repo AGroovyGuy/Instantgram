@@ -1,13 +1,5 @@
-from django.forms import Form, forms, ModelForm
+from django.forms import forms
 from django import forms
-from .models import Photo
-
-
-
-# class PhotoUploadForm(ModelForm):
-#     class Meta:
-#         model = Photo
-#         fields = ["photo", "description"]
 
 
 class PhotoUploadForm(forms.Form):

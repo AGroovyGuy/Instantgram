@@ -20,34 +20,23 @@ from .forms import LoginForm, PhotoUploadForm, CreateAccountForm
 @method_decorator(login_required, name='dispatch')
 class HubView(View):
     def get(self, request):
-        form = PhotoUploadForm()
-        ctx = {"posts": Photo.objects.all().order_by("-creation_date"), "form":form}
+        ctx = {"posts": Photo.objects.all().order_by("-creation_date")}
         return render(request, "hub.html", context=ctx)
 
+
+@method_decorator(login_required, name='dispatch')
+class AddPhotoView(View):
+    def get(self, request):
+        form = PhotoUploadForm()
+        ctx = {"form": form}
+        return render(request, "addphoto.html", ctx)
     def post(self, request):
         form = PhotoUploadForm(request.POST, request.FILES)
-        ctx = {"posts": Photo.objects.all().order_by("-creation_date"), "form":form}
         if form.is_valid():
             contents = Photo.objects.create(description=form.cleaned_data["description"],
                                             op=self.request.user,
                                                 photo=form.cleaned_data["photo"])
-        return render(request, "hub.html", ctx)
-
-
-
-# class JobrazkowyView(View):
-#     def get(self, request):
-#         ctx = {"Jobrazki": Jobrazek.objects.all(), 'form': ObrazkowyForm()}
-#         return render(request, "jobrazek.html", context=ctx)
-#     def post(self, request):
-#         form = ObrazkowyForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             form.save()
-# return redirect(reverse('main'))
-
-
-
-
+        return HttpResponseRedirect('/hub')
 
 
 class LoginView(View):
