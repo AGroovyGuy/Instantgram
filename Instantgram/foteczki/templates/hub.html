@@ -12,7 +12,13 @@
             <input type="submit" value="Submit" />
         </form>
         {% for post in posts %}
-            <img src="{{ post.photo.url }}"/>
+            <div id="photo_div">
+            <img src="{{ post.photo.url }}" width="600", height="400"/>
+            <br>{{ post.op }}
+            <br>{{ post.creation_date }}
+            <br>{{ post.description }}<br>
+            </div><br>
+
         {% endfor %}
     </body>
 </html>

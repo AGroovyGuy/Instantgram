@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16340e14-4de9-48f0-872b-672212f92f4f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Instantgram/Instantgram/settings.py" afterPath="$PROJECT_DIR$/Instantgram/Instantgram/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Instantgram/Instantgram/urls.py" afterPath="$PROJECT_DIR$/Instantgram/Instantgram/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Instantgram/foteczki/forms.py" afterPath="$PROJECT_DIR$/Instantgram/foteczki/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Instantgram/foteczki/models.py" afterPath="$PROJECT_DIR$/Instantgram/foteczki/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Instantgram/foteczki/templates/base.html" afterPath="$PROJECT_DIR$/Instantgram/foteczki/templates/base.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Instantgram/foteczki/templates/hub.html" afterPath="$PROJECT_DIR$/Instantgram/foteczki/templates/hub.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Instantgram/foteczki/views.py" afterPath="$PROJECT_DIR$/Instantgram/foteczki/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,18 +27,18 @@
       <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Instantgram/foteczki/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+            <state relative-caret-position="18">
+              <caret line="1" column="17" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hub.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="hub.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Instantgram/foteczki/templates/hub.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="35" lean-forward="false" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+            <state relative-caret-position="342">
+              <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -62,7 +56,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Instantgram/foteczki/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
@@ -113,10 +107,11 @@
         <option value="$PROJECT_DIR$/Instantgram/foteczki/templates/form-show.html" />
         <option value="$PROJECT_DIR$/Instantgram/foteczki/templates/form.html" />
         <option value="$PROJECT_DIR$/Instantgram/Instantgram/urls.py" />
-        <option value="$PROJECT_DIR$/Instantgram/foteczki/templates/base.html" />
         <option value="$PROJECT_DIR$/Instantgram/foteczki/forms.py" />
         <option value="$PROJECT_DIR$/Instantgram/foteczki/views.py" />
         <option value="$PROJECT_DIR$/Instantgram/Instantgram/settings.py" />
+        <option value="$PROJECT_DIR$/Instantgram/foteczki/templates/base.html" />
+        <option value="$PROJECT_DIR$/Instantgram/foteczki/static/css/style.css" />
         <option value="$PROJECT_DIR$/Instantgram/foteczki/templates/hub.html" />
       </list>
     </option>
@@ -167,6 +162,13 @@
               <item name="Instantgram" type="462c0819:PsiDirectoryNode" />
               <item name="Instantgram" type="462c0819:PsiDirectoryNode" />
               <item name="foteczki" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Instantgram" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Instantgram" type="462c0819:PsiDirectoryNode" />
+              <item name="Instantgram" type="462c0819:PsiDirectoryNode" />
+              <item name="foteczki" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Instantgram" type="b2602c69:ProjectViewProjectNode" />
@@ -453,10 +455,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Instantgram/foteczki/templates/base.html">
+    <entry file="file://$PROJECT_DIR$/Instantgram/Instantgram/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        <state relative-caret-position="306">
+          <caret line="17" column="77" lean-forward="false" selection-start-line="17" selection-start-column="77" selection-end-line="17" selection-end-column="77" />
           <folding />
         </state>
       </provider>
@@ -481,18 +483,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Instantgram/Instantgram/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="77" lean-forward="false" selection-start-line="17" selection-start-column="77" selection-end-line="17" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Instantgram/Instantgram/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="687">
           <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Instantgram/foteczki/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="17" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Instantgram/foteczki/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="22" lean-forward="true" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Instantgram/foteczki/templates/hub.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -504,14 +522,6 @@
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Instantgram/foteczki/templates/hub.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="35" lean-forward="false" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
