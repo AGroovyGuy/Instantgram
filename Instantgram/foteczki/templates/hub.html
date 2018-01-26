@@ -1,15 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form method="post" enctype="multipart/form-data">{% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Add Photo</button>
-</form>
 
-{% for post in posts %}
 {% load static %}
-<img src="{{ MEDIA_URL }}" height="420">
-{% endfor %}
-
+<html>
+    <head></head>
+    <body>
+        <form action="{% url 'hub' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Submit" />
+        </form>
+        {% for post in posts %}
+            <img src="{{ post.photo.url }}"/>
+        {% endfor %}
+    </body>
+</html>
 {% endblock %}
 

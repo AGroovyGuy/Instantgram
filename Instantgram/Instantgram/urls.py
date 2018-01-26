@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from foteczki.views import (HubView, LoginView)
+from foteczki.views import (HubView, LoginView, CreateAccountView, LogoutView)
+from .settings import MEDIA_ROOT, MEDIA_URL
 from django.conf.urls.static import static
 
 
@@ -23,7 +24,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('hub/', HubView.as_view(), name="hub"),
     path('', LoginView.as_view(), name="login"),
-]
+    path('createuser/', CreateAccountView.as_view(), name="createaccount"),
+    path('logout', LogoutView.as_view(), name="logout"),
+] + static(MEDIA_URL, document_root= MEDIA_ROOT)
 
 
 

@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 
 class Photo(models.Model):
-    photo = models.ImageField(upload_to='home/konrad/Pulpit/Instantgram/Instantgram/foteczki/images', null=True, blank=True)
+    photo = models.ImageField(upload_to='foteczki/')
     creation_date = models.DateTimeField(auto_now=True)
     description = models.TextField()
     op = models.ForeignKey(User, on_delete=models.CASCADE)

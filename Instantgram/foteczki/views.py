@@ -14,18 +14,18 @@ from django.contrib.auth.decorators import permission_required
 from django.contrib.auth.mixins import UserPassesTestMixin
 import hashlib
 from django.http import HttpResponse, HttpResponseRedirect
-from .forms import LoginForm, PhotoUploadForm
+from .forms import LoginForm, PhotoUploadForm, CreateAccountForm
 
 
+@method_decorator(login_required, name='dispatch')
 class HubView(View):
     def get(self, request):
-        form = PhotoUploadForm
-        success_url = '/static/'
+        form = PhotoUploadForm()
         ctx = {"posts": Photo.objects.all().order_by("-creation_date"), "form":form}
-        return render(request, "hub.html")
+        return render(request, "hub.html", context=ctx)
 
     def post(self, request):
-        form = PhotoUploadForm(request.POST)
+        form = PhotoUploadForm(request.POST, request.FILES)
         ctx = {"posts": Photo.objects.all().order_by("-creation_date"), "form":form}
         if form.is_valid():
             contents = Photo.objects.create(description=form.cleaned_data["description"],
@@ -34,10 +34,26 @@ class HubView(View):
         return render(request, "hub.html", ctx)
 
 
+
+# class JobrazkowyView(View):
+#     def get(self, request):
+#         ctx = {"Jobrazki": Jobrazek.objects.all(), 'form': ObrazkowyForm()}
+#         return render(request, "jobrazek.html", context=ctx)
+#     def post(self, request):
+#         form = ObrazkowyForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             form.save()
+# return redirect(reverse('main'))
+
+
+
+
+
+
 class LoginView(View):
     def get(self, request):
         form = LoginForm()
-        return render(request, "hub.html", {"form": form})
+        return render(request, "form-show.html", {"form": form})
 
     def post(self, request):
         form = LoginForm(request.POST)
@@ -50,4 +66,32 @@ class LoginView(View):
                 return HttpResponseRedirect('/hub')
             else:
                 return HttpResponse("Błędny login lub hasło.")
-        return render(request, "hub.html", {"form": form})
+        return render(request, "form-show.html", {"form": form})
+
+
+
+class CreateAccountView(View):
+    def get(self, request):
+        form = CreateAccountForm()
+        return render(request, "form-show.html", {"form": form})
+
+    def post(self, request):
+        form = CreateAccountForm(request.POST)
+        if form.is_valid():
+            if User.objects.filter(username=form.cleaned_data["nickname"]).count() > 0:
+                messages.info(request, 'Istnieje już użytkownik o takim nicku.')
+                return HttpResponseRedirect('/createuser')
+            elif User.objects.filter(email=form.cleaned_data["mail"]).count() > 0:
+                messages.info(request, 'Konto o podanym mailu już istnieje.')
+                return HttpResponseRedirect('/createuser')
+            User.objects.create_user(username=form.cleaned_data["nickname"],
+                                                 password=form.cleaned_data["password"],
+                                                 email=form.cleaned_data["mail"])
+            return HttpResponseRedirect('/')
+
+
+@method_decorator(login_required, name='dispatch')
+class LogoutView(View):
+    def get(self, request):
+        logout(request)
+        return HttpResponseRedirect('/')

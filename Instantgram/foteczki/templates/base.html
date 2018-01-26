@@ -6,6 +6,13 @@
     </head>
     <body>
         {% block content %}
+                <div>{% if user.is_authenticated %}
+                ZALOGOWANO JAKO: {{ user }}
+                <a class="nav-item" href="{% url 'logout' %}">wyloguj</a>
+                {% else %}
+                <a class="nav-item" href="{% url 'login' %}">zaloguj</a>
+                {% endif %}
+                </div>
         {% endblock %}
     </body>
 </html>
