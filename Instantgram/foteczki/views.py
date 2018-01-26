@@ -20,8 +20,23 @@ from .forms import LoginForm, PhotoUploadForm, CreateAccountForm
 @method_decorator(login_required, name='dispatch')
 class HubView(View):
     def get(self, request):
-        ctx = {"posts": Photo.objects.all().order_by("-creation_date")}
-        return render(request, "hub.html", context=ctx)
+        posts = Photo.objects.all().order_by("-creation_date")
+        likes_dict = {}
+        for photo in posts:
+            likes_dict.update({photo.id: Likes.objects.filter(photo_id=photo.id).count()})
+        return render(request, 'hub.html', {'posts': posts, 'likes_dict': likes_dict})
+
+    def post(self, request):
+        posts = Photo.objects.all().order_by("-creation_date")
+        photo_id = request.POST.get('photo_id')
+        likes = Likes.objects.filter(user_id=request.user).filter(photo_id=photo_id).count()
+        if likes == 0:
+            new_like = Likes.objects.create(photo_id=photo_id,
+                                            user_id=request.user)
+        else:
+            Likes.objects.filter(photo_id=photo_id, user_id=request.user).delete()
+        return redirect('/hub')
+
 
 
 @method_decorator(login_required, name='dispatch')

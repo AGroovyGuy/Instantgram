@@ -10,9 +10,22 @@
     <br>{{ post.op }}
     <br>{{ post.creation_date }}
     <br>{{ post.description }}<br>
+    {% for key, value in likes_dict.items %}
+        {% if key == photo.id %}
+        {{value}}<br>
+        {% endif %}
+    {% endfor %}
+        <form action="" method="POST">
+            <input type="hidden" value="{{post.id}}" name="photo_id">
+            {% csrf_token %}
+            <button type="submit">&hearts;</button>
+        </form>
     </div><br>
 
 {% endfor %}
 
 {% endblock %}
+
+
+
 
