@@ -29,13 +29,14 @@ class HubView(View):
     def post(self, request):
         posts = Photo.objects.all().order_by("-creation_date")
         photo_id = request.POST.get('photo_id')
+        photo = Photo.objects.get(pk=photo_id)
         likes = Likes.objects.filter(user_id=request.user).filter(photo_id=photo_id).count()
         if likes == 0:
-            new_like = Likes.objects.create(photo_id=photo_id,
+            new_like = Likes.objects.create(photo_id=photo,
                                             user_id=request.user)
         else:
             Likes.objects.filter(photo_id=photo_id, user_id=request.user).delete()
-        return redirect('/hub')
+        return HttpResponseRedirect('/hub')
 
 
 
